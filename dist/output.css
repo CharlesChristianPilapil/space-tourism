@@ -733,7 +733,7 @@ video {
 }
 
 body {
-  background-image: url('../dist/assets/home/background-home-mobile.jpg');
+  background-image: url('assets/home/background-home-mobile.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
