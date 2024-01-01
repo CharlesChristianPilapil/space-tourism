@@ -78,3 +78,16 @@ nav ul::after {
 .explore:hover::after {
     opacity: 1;
 }
+
+
+@media (min-width: 676px) {
+    body {
+        background-image: url('assets/home/background-home-tablet.jpg');
+    }
+}
+
+@media (min-width: 976px) {
+    body {
+        background-image: url('assets/home/background-home-desktop.jpg');
+    }
+}

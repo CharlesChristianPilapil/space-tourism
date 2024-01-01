@@ -626,6 +626,26 @@ video {
   margin-bottom: 2rem;
 }
 
+.mt-\[\]{
+  margin-top: ;
+}
+
+.mt-\[50\]{
+  margin-top: 50;
+}
+
+.mt-\[50\%\]{
+  margin-top: 50%;
+}
+
+.mt-\[20\%\]{
+  margin-top: 20%;
+}
+
+.mt-\[10\%\]{
+  margin-top: 10%;
+}
+
 .flex{
   display: flex;
 }
@@ -844,6 +864,18 @@ nav ul::after {
   opacity: 1;
 }
 
+@media (min-width: 676px) {
+  body {
+    background-image: url('assets/home/background-home-tablet.jpg');
+  }
+}
+
+@media (min-width: 976px) {
+  body {
+    background-image: url('assets/home/background-home-desktop.jpg');
+  }
+}
+
 @media (min-width: 676px){
   .tablet\:flex{
     display: flex;
@@ -932,5 +964,11 @@ nav ul::after {
 
   .lgDesktop\:text-\[3rem\]{
     font-size: 3rem;
+  }
+}
+
+@media (min-width: 1560px){
+  .xlDesktop\:gap-\[8rem\]{
+    gap: 8rem;
   }
 }
