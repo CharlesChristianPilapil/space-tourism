@@ -626,24 +626,12 @@ video {
   margin-bottom: 2rem;
 }
 
-.mt-\[\]{
-  margin-top: ;
-}
-
-.mt-\[50\]{
-  margin-top: 50;
-}
-
-.mt-\[50\%\]{
-  margin-top: 50%;
-}
-
-.mt-\[20\%\]{
-  margin-top: 20%;
-}
-
 .mt-\[10\%\]{
   margin-top: 10%;
+}
+
+.mt-\[15\%\]{
+  margin-top: 15%;
 }
 
 .flex{
@@ -667,6 +655,10 @@ video {
 }
 
 .h-full{
+  height: 100%;
+}
+
+.h-\[100\%\]{
   height: 100%;
 }
 
@@ -716,6 +708,10 @@ video {
 
 .gap-\[5rem\]{
   gap: 5rem;
+}
+
+.overflow-hidden{
+  overflow: hidden;
 }
 
 .rounded-\[50\%\]{
@@ -774,11 +770,6 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.text-gray-300{
-  --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity));
-}
-
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -802,7 +793,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-  color: white;
+  color: gainsboro;
 }
 
 nav ul {
