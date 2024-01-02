@@ -6,9 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="text-white font-primary">
+<body class="text-white font-primary overflow-y-auto">
 
-    <div class="overflow-hidden h-full">
+    <div class="background">
 
         <nav class="flex items-center justify-between py-[2rem] gap-[1rem] mb-[2rem]">
             <img src="assets/shared/logo.svg" alt="logo" class="pl-[2rem] cursor-pointer">
@@ -17,7 +17,7 @@
     
             </div>
     
-            <ul class="decoration-0 font-semi-bold text-white gap-[1rem] p-[2rem] hidden tablet:flex tablet:justify-end desktop:flex-grow-[1] desktop:justify-center desktop:gap-[3rem] lgDesktop:gap-[10%] xlDesktop:gap-[8rem] xxlDesktop:-[10%]">
+            <ul class="decoration-0 font-semi-bold text-white gap-[1rem] p-[2rem] hidden tablet:flex tablet:justify-end desktop:flex-grow-[1] desktop:justify-center desktop:gap-[3rem] lgDesktop:gap-[10%] xlDesktop:gap-[8rem]">
                 <li> <span> 00 </span> Home </li>
                 <li> <span> 01 </span> Destination </li>
                 <li> <span> 02 </span> Crew </li>
@@ -30,16 +30,16 @@
     
         </nav>
     
-        <section class="tabs container relative mt-[10%] h-[100%]">
+        <section class="container px-[2rem] relative h-full desktop:px-[5rem]">
+            
+            <div class="pb-[5rem] flex flex-col items-center desktop:mt-[13rem] justify-center gap-[5rem] desktop:flex-row desktop:justify-between tabs desktop:pb-[10rem]">    
+            <!-- <div class="flex flex-col items-center justify-center px-[2rem] gap-[5rem] desktop:flex-row desktop:absolute desktop:bottom-[20vh] desktop:w-full desktop:mx-auto desktop:left-0 tabs"> -->
     
-            <!-- <div class="flex flex-col items-center justify-center px-[2rem] gap-[5rem] desktop:flex-row desktop:fixed desktop:bottom-[20vh] desktop:w-full desktop:mx-auto desktop:left-0"> -->
-            <div class="flex flex-col items-center justify-center px-[2rem] gap-[5rem] desktop:flex-row ">    
-    
-                <div class="h-[50%] text-center flex flex-col gap-[2rem] desktop:text-start desktop:w-[50%] desktop:h-full">
+                <div class="h-[50%] text-center flex flex-col desktop:text-start desktop:w-[50%] desktop:h-full">
                     <div>
                         <p> SO, YOU WANT TO TRAVEL TO </p>
         
-                        <h1 class="text-[5rem] font-head desktop:text-[10rem]"> SPACE </h1>
+                        <h1 class="text-[5rem] font-head mobile:text-[7rem] desktop:text-[10rem]"> SPACE </h1>
                     </div>
         
                     <P class="max-w-[400px]"> 
@@ -49,7 +49,60 @@
         
         
                 <div class="h-[10rem] w-[10rem] bg-white rounded-[50%] grid place-items-center text-black explore lgDesktop:h-[15rem] lgDesktop:w-[15rem]">
-                    <h1 class="text-[2rem] font-head lgDesktop:text-[3rem]"> Explore </h1>
+                    <h2 class="text-[2rem] font-head lgDesktop:text-[3rem]"> Explore </h2>
+                </div>
+    
+            </div>
+
+            <div class="pb-[5rem] tabs"> 
+
+                <h1 class="mb-[3rem] text-center tablet:text-start tablet:text-[1.5rem]"> <span class="mr-[1rem] text-gray-400"> 01 </span> PICK YOUR DESTINATION </h1>
+
+
+                <div class="grid place-items-center gap-[2rem] text-center desktop:grid-cols-2 desktop:place-items-start desktop:items-center desktop:justify-items-end desktop:text-start lgDesktop:mt-[5rem]">
+
+                    <img src="assets/destination/image-moon.png" alt="" class="w-[200px] tablet:w-[300px] desktop:w-[400px] xlDesktop:w-[500px]">
+
+                    <div class="flex flex-col h-full items-center justify-between gap-[1rem] desktop:items-start desktop:gap-0">
+                        
+
+                        <ul class="flex gap-[1rem] desktop:gap-[3rem] font-semibold">
+                            <li> MOON </li>
+                            <li> MARS </li>
+                            <li> UROPA </li> 
+                            <li> TITAN </li>
+                        </ul>
+
+                        <div class="flex flex-col desktop:gap-[1rem]">
+
+                            <h2 class="text-[3rem] font-head mobile:text-[5rem] desktop:text-[5.5rem]"> MOON </h2>
+
+                            <p class="max-w-[450px]"> 
+                                See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites. 
+                            </p>
+
+                        </div>
+
+                        <div class="bg-white h-[1px] w-full destination-line">
+
+                        </div>
+
+                        <div class="flex flex-col gap-[1rem] justify-between font-head tablet:flex-row tablet:w-[300px] tablet:text-start desktop:w-[350px]">
+                            <div>
+                                <p class="text-gray-400"> AVG. DISTANCE </p>
+                                <h2 class="text-[1.5rem] text-white desktop:text-[2rem]"> 384,400 KM </h2>
+                            </div>
+
+                            <div>
+                                <p class="text-gray-400"> EST. TRAVEL TIME </p>
+                                <h2 class="text-[1.5rem] text-white desktop:text-[2rem]"> 3 DAYS </h2>
+                            </div>
+
+                        </div>
+
+    
+                    </div>
+
                 </div>
     
             </div>

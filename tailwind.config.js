@@ -8,8 +8,7 @@ module.exports = {
         tablet: '676px',
         desktop: '976px',
         lgDesktop: '1200px',
-        xlDesktop: '1560px',
-        xxlDesktop: '1920px'
+        xlDesktop: '1380px',
       },
 
       container: {
