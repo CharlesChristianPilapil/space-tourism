@@ -1,9 +1,47 @@
 'use-strict';
 
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.querySelector('.mobile-nav');
+const navIcon = document.querySelector('.nav-icon');
+const navOverlay = document.querySelector('.nav-overlay');
+const mobileList = document.querySelectorAll('.mobile-nav-list');
+
+
+mobileList.forEach((list, index) => {
+    list.addEventListener('click', () => {
+        activeTab(index);
+        closeMobileNav();
+    })
+})
+
+
+const updateBurgerIcon = () => {
+    const iconPath = mobileNav.classList.contains('active') ? 'assets/shared/icon-close.svg' : 'assets/shared/icon-hamburger.svg';
+    navIcon.src = iconPath;
+};
+
+const toggleMobileNav = () => {
+    mobileNav.classList.toggle('active');
+    navOverlay.style.zIndex = mobileNav.classList.contains('active') ? '1' : '0';
+};
+
+const closeMobileNav = () => {
+    navOverlay.style.zIndex = '0';
+    mobileNav.classList.remove('active');
+    updateBurgerIcon();
+};
+
+hamburger.addEventListener('click', () => {
+    toggleMobileNav();
+    updateBurgerIcon();
+});
+
+navOverlay.addEventListener('click', closeMobileNav);
+
+
 const navList = document.querySelectorAll('.nav-list');
 const tabs = document.querySelectorAll('.tabs');
 const explore = document.querySelector('.explore');
-
 
 let tabName = '';
 let styles = '';
@@ -21,6 +59,9 @@ const activeTab = (index) => {
 
     tabs.forEach(tabs => tabs.classList.remove('active'));        
     tabs[index].classList.add('active');
+
+    mobileList.forEach(mobileList => mobileList.classList.remove('active'));        
+    mobileList[index].classList.add('active');
 
     if(index == 0) tabName = 'home';
 
@@ -76,7 +117,7 @@ const planets = async (index) => {
     planet.src = planets.destinations[index].images.png;
     planet.alt = `${planets.destinations[index].name}`;
 
-    planetName.innerHTML = `${planets.destinations[index].name}`;
+    planetName.innerHTML = `${planets.destinations[index].name.toUpperCase()}`;
     planetDescription.innerHTML = `${planets.destinations[index].description}`
     distance.innerHTML = `${planets.destinations[index].distance}`
     travelTime.innerHTML = `${planets.destinations[index].travel}`

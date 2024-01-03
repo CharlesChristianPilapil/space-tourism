@@ -9,7 +9,7 @@ body {
     background-position: center;
     background-size: cover;
     min-height: 100vh;
-    transition: .2s ease-in-out;
+    /* transition: .2s ease-in-out; */
 }
 
 .transitions {
@@ -63,6 +63,39 @@ nav .nav-list:hover:after {
 }
 
 nav .nav-list.active:after {
+    width: 100%;
+}
+
+.mobile-nav {
+    transform: translateX(100%);
+    transition: .3s ease-in-out;
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+}
+
+.mobile-nav .mobile-nav-list {
+    position: relative;
+}
+
+.mobile-nav .mobile-nav-list::after {
+    content: "";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: white;
+    transition: .2s ease-in-out;
+}
+
+.mobile-nav .mobile-nav-list:hover:after {
+    width: 100%;
+}
+
+.mobile-nav .mobile-nav-list.active:after {
     width: 100%;
 }
 

@@ -612,12 +612,44 @@ video {
   }
 }
 
+.fixed{
+  position: fixed;
+}
+
+.absolute{
+  position: absolute;
+}
+
 .relative{
   position: relative;
 }
 
 .bottom-0{
   bottom: 0px;
+}
+
+.left-0{
+  left: 0px;
+}
+
+.right-0{
+  right: 0px;
+}
+
+.top-0{
+  top: 0px;
+}
+
+.z-0{
+  z-index: 0;
+}
+
+.z-10{
+  z-index: 10;
+}
+
+.z-20{
+  z-index: 20;
 }
 
 .mx-auto{
@@ -705,6 +737,15 @@ video {
   width: 3rem;
 }
 
+.w-\[70\%\]{
+  width: 70%;
+}
+
+.w-fit{
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .w-full{
   width: 100%;
 }
@@ -765,8 +806,16 @@ video {
   gap: 2rem;
 }
 
+.gap-\[3rem\]{
+  gap: 3rem;
+}
+
 .gap-\[5rem\]{
   gap: 5rem;
+}
+
+.overflow-x-hidden{
+  overflow-x: hidden;
 }
 
 .overflow-y-scroll{
@@ -785,6 +834,11 @@ video {
   border-bottom-width: 1px;
 }
 
+.bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 .bg-gray-400{
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
@@ -793,6 +847,10 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-opacity-70{
+  --tw-bg-opacity: 0.7;
 }
 
 .object-contain{
@@ -807,6 +865,11 @@ video {
 .px-\[2rem\]{
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.py-\[10rem\]{
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .py-\[2rem\]{
@@ -879,7 +942,7 @@ body {
   background-position: center;
   background-size: cover;
   min-height: 100vh;
-  transition: .2s ease-in-out;
+  /* transition: .2s ease-in-out; */
 }
 
 .transitions {
@@ -933,6 +996,39 @@ nav .nav-list:hover:after {
 }
 
 nav .nav-list.active:after {
+  width: 100%;
+}
+
+.mobile-nav {
+  transform: translateX(100%);
+  transition: .3s ease-in-out;
+}
+
+.mobile-nav.active {
+  transform: translateX(0);
+}
+
+.mobile-nav .mobile-nav-list {
+  position: relative;
+}
+
+.mobile-nav .mobile-nav-list::after {
+  content: "";
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  transition: .2s ease-in-out;
+}
+
+.mobile-nav .mobile-nav-list:hover:after {
+  width: 100%;
+}
+
+.mobile-nav .mobile-nav-list.active:after {
   width: 100%;
 }
 
