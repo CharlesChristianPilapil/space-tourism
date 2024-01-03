@@ -620,10 +620,6 @@ video {
   bottom: 0px;
 }
 
-.clear-start{
-  clear: inline-start;
-}
-
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -649,16 +645,16 @@ video {
   display: flex;
 }
 
-.table{
-  display: table;
-}
-
 .grid{
   display: grid;
 }
 
 .hidden{
   display: none;
+}
+
+.h-\[100\%\]{
+  height: 100%;
 }
 
 .h-\[10px\]{
@@ -673,6 +669,10 @@ video {
   height: 1px;
 }
 
+.h-\[3rem\]{
+  height: 3rem;
+}
+
 .h-\[50\%\]{
   height: 50%;
 }
@@ -681,16 +681,16 @@ video {
   height: 100%;
 }
 
-.h-\[100\]{
-  height: 100;
+.h-\[300px\]{
+  height: 300px;
 }
 
-.h-\[100\%\]{
-  height: 100%;
+.h-\[400px\]{
+  height: 400px;
 }
 
-.max-h-full{
-  max-height: 100%;
+.w-\[100\%\]{
+  width: 100%;
 }
 
 .w-\[10px\]{
@@ -705,6 +705,10 @@ video {
   width: 200px;
 }
 
+.w-\[3rem\]{
+  width: 3rem;
+}
+
 .w-full{
   width: 100%;
 }
@@ -717,16 +721,12 @@ video {
   max-width: 450px;
 }
 
-.max-w-\[\]{
-  max-width: ;
-}
-
-.max-w-\[4\]{
-  max-width: 4;
-}
-
 .max-w-\[480px\]{
   max-width: 480px;
+}
+
+.max-w-\[500px\]{
+  max-width: 500px;
 }
 
 .flex-grow-\[1\]{
@@ -773,19 +773,19 @@ video {
   gap: 5rem;
 }
 
-.gap-\[\]{
-  gap: ;
-}
-
 .overflow-y-auto{
   overflow-y: auto;
+}
+
+.overflow-y-scroll{
+  overflow-y: scroll;
 }
 
 .rounded-\[50\%\]{
   border-radius: 50%;
 }
 
-.border{
+.border-\[1px\]{
   border-width: 1px;
 }
 
@@ -803,19 +803,9 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-black{
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.bg-red-800{
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
-}
-
-.bg-gray-900{
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .p-\[2rem\]{
@@ -918,12 +908,35 @@ nav ul::after {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgb(163, 163, 163);
-  opacity: 20%;
-  filter: blur(2px);
+  background-color: rgb(0, 0, 0);
+  opacity: 50%;
   z-index: -1;
   position: absolute;
   display: block;
+}
+
+nav .nav-list {
+  position: relative;
+}
+
+nav .nav-list::after {
+  content: "";
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  display: block;
+  position: absolute;
+  transition: .2s ease-in-out;
+}
+
+nav .nav-list:hover:after {
+  width: 100%;
+}
+
+nav .nav-list.active:after {
+  width: 100%;
 }
 
 .line {
@@ -967,8 +980,36 @@ nav ul::after {
   opacity: 1;
 }
 
+section .destination-list {
+  position: relative;
+}
+
+section .destination-list::after {
+  content: "";
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  display: block;
+  position: absolute;
+  transition: .2s ease-in-out;
+}
+
+section .destination-list:hover:after {
+  width: 100%;
+}
+
+section .destination-list.active:after {
+  width: 100%;
+}
+
 section .tabs {
   display: none;
+}
+
+section .tabs.active {
+  display: block;
 }
 
 section .crew-nav {
@@ -976,9 +1017,23 @@ section .crew-nav {
   transition: .2s ease-in-out;
 }
 
+section .crew-nav:hover {
+  width: 30px;
+  border-radius: 0;
+}
+
 section .crew-nav.active {
   width: 30px;
   border-radius: 0;
+}
+
+section .tech-nav {
+  transition: .2s ease-in-out;
+}
+
+section .tech-nav:hover {
+  background-color: white;
+  color: black;
 }
 
 @media (min-width: 676px) {
@@ -990,6 +1045,74 @@ section .crew-nav.active {
 @media (min-width: 976px) {
   body {
     background-image: url('assets/home/background-home-desktop.jpg');
+  }
+}
+
+@media (min-width: 1380px){
+  .xlDesktop\:container{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (min-width: 470px){
+    .xlDesktop\:container{
+      max-width: 470px;
+    }
+  }
+
+  @media (min-width: 640px){
+    .xlDesktop\:container{
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 676px){
+    .xlDesktop\:container{
+      max-width: 676px;
+    }
+  }
+
+  @media (min-width: 768px){
+    .xlDesktop\:container{
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 976px){
+    .xlDesktop\:container{
+      max-width: 976px;
+    }
+  }
+
+  @media (min-width: 1024px){
+    .xlDesktop\:container{
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1200px){
+    .xlDesktop\:container{
+      max-width: 1200px;
+    }
+  }
+
+  @media (min-width: 1280px){
+    .xlDesktop\:container{
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1380px){
+    .xlDesktop\:container{
+      max-width: 1380px;
+    }
+  }
+
+  @media (min-width: 1536px){
+    .xlDesktop\:container{
+      max-width: 1536px;
+    }
   }
 }
 
@@ -1016,12 +1139,12 @@ section .crew-nav.active {
     display: none;
   }
 
-  .tablet\:min-h-\[\]{
-    min-height: ;
+  .tablet\:h-\[\]{
+    height: ;
   }
 
-  .tablet\:min-h-\[800px\]{
-    min-height: 800px;
+  .tablet\:h-\[500px\]{
+    height: 500px;
   }
 
   .tablet\:min-h-\[700px\]{
@@ -1030,14 +1153,6 @@ section .crew-nav.active {
 
   .tablet\:w-\[300px\]{
     width: 300px;
-  }
-
-  .tablet\:w-\[\]{
-    width: ;
-  }
-
-  .tablet\:w-\[600px\]{
-    width: 600px;
   }
 
   .tablet\:w-\[500px\]{
@@ -1054,10 +1169,6 @@ section .crew-nav.active {
 
   .tablet\:justify-end{
     justify-content: flex-end;
-  }
-
-  .tablet\:border{
-    border-width: 1px;
   }
 
   .tablet\:border-0{
@@ -1094,6 +1205,15 @@ section .crew-nav.active {
     left: 0px;
   }
 
+  .desktop\:order-2{
+    order: 2;
+  }
+
+  .desktop\:mx-0{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .desktop\:mx-auto{
     margin-left: auto;
     margin-right: auto;
@@ -1105,6 +1225,10 @@ section .crew-nav.active {
 
   .desktop\:block{
     display: block;
+  }
+
+  .desktop\:flex{
+    display: flex;
   }
 
   .desktop\:h-full{
@@ -1127,20 +1251,8 @@ section .crew-nav.active {
     width: 100%;
   }
 
-  .desktop\:w-\[\]{
-    width: ;
-  }
-
-  .desktop\:w-\[700px\]{
-    width: 700px;
-  }
-
-  .desktop\:w-\[800px\]{
-    width: 800px;
-  }
-
-  .desktop\:w-\[900px\]{
-    width: 900px;
+  .desktop\:max-w-\[500px\]{
+    max-width: 500px;
   }
 
   .desktop\:flex-grow-\[1\]{
@@ -1155,6 +1267,10 @@ section .crew-nav.active {
     flex-direction: row;
   }
 
+  .desktop\:flex-col{
+    flex-direction: column;
+  }
+
   .desktop\:place-items-start{
     place-items: start;
   }
@@ -1167,12 +1283,20 @@ section .crew-nav.active {
     align-items: center;
   }
 
+  .desktop\:justify-end{
+    justify-content: flex-end;
+  }
+
   .desktop\:justify-center{
     justify-content: center;
   }
 
   .desktop\:justify-between{
     justify-content: space-between;
+  }
+
+  .desktop\:justify-items-start{
+    justify-items: start;
   }
 
   .desktop\:justify-items-end{
@@ -1191,8 +1315,9 @@ section .crew-nav.active {
     gap: 3rem;
   }
 
-  .desktop\:gap-\[2rem\]{
-    gap: 2rem;
+  .desktop\:px-\[0\]{
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .desktop\:px-\[5rem\]{
@@ -1204,12 +1329,20 @@ section .crew-nav.active {
     padding-bottom: 10rem;
   }
 
+  .desktop\:pl-\[5rem\]{
+    padding-left: 5rem;
+  }
+
   .desktop\:text-start{
     text-align: start;
   }
 
   .desktop\:text-\[10rem\]{
     font-size: 10rem;
+  }
+
+  .desktop\:text-\[2\.5rem\]{
+    font-size: 2.5rem;
   }
 
   .desktop\:text-\[2rem\]{
@@ -1234,10 +1367,6 @@ section .crew-nav.active {
     width: 15rem;
   }
 
-  .lgDesktop\:items-start{
-    align-items: flex-start;
-  }
-
   .lgDesktop\:gap-\[10\%\]{
     gap: 10%;
   }
@@ -1252,24 +1381,24 @@ section .crew-nav.active {
     position: absolute;
   }
 
-  .xlDesktop\:h-full{
-    height: 100%;
-  }
-
-  .xlDesktop\:h-\[100\%\]{
-    height: 100%;
-  }
-
-  .xlDesktop\:h-\[\]{
-    height: ;
+  .xlDesktop\:h-\[5rem\]{
+    height: 5rem;
   }
 
   .xlDesktop\:h-\[700px\]{
     height: 700px;
   }
 
+  .xlDesktop\:h-\[900px\]{
+    height: 900px;
+  }
+
   .xlDesktop\:w-\[500px\]{
     width: 500px;
+  }
+
+  .xlDesktop\:w-\[5rem\]{
+    width: 5rem;
   }
 
   .xlDesktop\:w-\[900px\]{
@@ -1292,24 +1421,12 @@ section .crew-nav.active {
     gap: 8rem;
   }
 
-  .xlDesktop\:gap-\[3rem\]{
-    gap: 3rem;
-  }
-
-  .xlDesktop\:gap-\[5rem\]{
-    gap: 5rem;
-  }
-
-  .xlDesktop\:gap-\[10rem\]{
-    gap: 10rem;
-  }
-
   .xlDesktop\:text-start{
     text-align: start;
   }
 
-  .xlDesktop\:text-\[4rem\]{
-    font-size: 4rem;
+  .xlDesktop\:text-\[3\.5rem\]{
+    font-size: 3.5rem;
   }
 
   .xlDesktop\:text-\[3\.5\]{

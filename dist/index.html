@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="text-white font-primary overflow-y-auto">
+<body class="text-white font-primary overflow-y-scroll">
 
     <div class=" background">
 
@@ -18,10 +18,10 @@
             </div>
     
             <ul class="decoration-0 font-semi-bold text-white gap-[1rem] p-[2rem] hidden tablet:flex tablet:justify-end desktop:flex-grow-[1] desktop:justify-center desktop:gap-[3rem] lgDesktop:gap-[10%] xlDesktop:gap-[8rem]">
-                <li> <span> 00 </span> Home </li>
-                <li> <span> 01 </span> Destination </li>
-                <li> <span> 02 </span> Crew </li>
-                <li> <span> 03 </span> Technology</li>
+                <li class="nav-list"> <span> 00 </span> Home </li>
+                <li class="nav-list"> <span> 01 </span> Destination </li>
+                <li class="nav-list"> <span> 02 </span> Crew </li>
+                <li class="nav-list"> <span> 03 </span> Technology</li>
             </ul>
     
             <div class="mr-[2rem] hamburger tablet:hidden cursor-pointer">
@@ -30,54 +30,59 @@
     
         </nav>
     
-        <section class="container px-[2rem] relative h-full desktop:px-[5rem]">
-            
-            <div class="pb-[5rem] flex flex-col items-center desktop:mt-[13rem] justify-center gap-[5rem] desktop:flex-row desktop:justify-between tabs desktop:pb-[10rem]">    
-            <!-- <div class="flex flex-col items-center justify-center px-[2rem] gap-[5rem] desktop:flex-row desktop:absolute desktop:bottom-[20vh] desktop:w-full desktop:mx-auto desktop:left-0 tabs"> -->
-    
-                <div class="h-[50%] text-center flex flex-col desktop:text-start desktop:w-[50%] desktop:h-full">
-                    <div>
-                        <p> SO, YOU WANT TO TRAVEL TO </p>
-        
-                        <h1 class="text-[5rem] font-head mobile:text-[7rem] desktop:text-[10rem]"> SPACE </h1>
-                    </div>
-        
-                    <P class="max-w-[400px]"> 
-                        Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!
-                    </P>
-                </div>
-        
-        
-                <div class="h-[10rem] w-[10rem] bg-white rounded-[50%] grid place-items-center text-black explore lgDesktop:h-[15rem] lgDesktop:w-[15rem]">
-                    <h2 class="text-[2rem] font-head lgDesktop:text-[3rem]"> Explore </h2>
-                </div>
-    
-            </div>
+        <section class="relative h-full">
 
-            <div class="pb-[5rem] tabs"> 
+            <div class="tabs">
+
+                <div class="container px-[2rem] desktop:px-[5rem] pb-[5rem] flex flex-col items-center desktop:mt-[13rem] justify-center gap-[5rem] desktop:flex-row desktop:justify-between desktop:pb-[10rem]">    
+                    <!-- <div class="flex flex-col items-center justify-center px-[2rem] gap-[5rem] desktop:flex-row desktop:absolute desktop:bottom-[20vh] desktop:w-full desktop:mx-auto desktop:left-0 tabs"> -->
+            
+                        <div class="h-[50%] text-center flex flex-col desktop:text-start desktop:w-[50%] desktop:h-full">
+                            <div>
+                                <p> SO, YOU WANT TO TRAVEL TO </p>
+                
+                                <h1 class="text-[5rem] font-head mobile:text-[7rem] desktop:text-[10rem]"> SPACE </h1>
+                            </div>
+                
+                            <P class="max-w-[400px]"> 
+                                Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!
+                            </P>
+                        </div>
+                
+                
+                        <div class="h-[10rem] w-[10rem] bg-white rounded-[50%] grid place-items-center text-black explore lgDesktop:h-[15rem] lgDesktop:w-[15rem]">
+                            <h2 class="text-[2rem] font-head lgDesktop:text-[3rem]"> Explore </h2>
+                        </div>
+            
+                    </div>
+
+            </div>
+            
+
+            <div class="container px-[2rem] desktop:px-[5rem] pb-[5rem] tabs"> 
 
                 <h1 class="mb-[3rem] text-center tablet:text-start tablet:text-[1.5rem]"> <span class="mr-[1rem] text-gray-400"> 01 </span> PICK YOUR DESTINATION </h1>
 
 
                 <div class="grid place-items-center gap-[2rem] text-center desktop:grid-cols-2 desktop:place-items-start desktop:items-center desktop:justify-items-end desktop:text-start lgDesktop:mt-[5rem]">
 
-                    <img src="assets/destination/image-moon.png" alt="" class="w-[200px] tablet:w-[300px] desktop:w-[400px] xlDesktop:w-[500px]">
+                    <img src="assets/destination/image-moon.png" alt="" class="w-[200px] tablet:w-[300px] desktop:w-[400px] xlDesktop:w-[500px] planet">
 
                     <div class="flex flex-col h-full items-center justify-between gap-[1rem] desktop:items-start desktop:gap-0">
                         
 
                         <ul class="flex gap-[1rem] desktop:gap-[3rem] font-semibold">
-                            <li> MOON </li>
-                            <li> MARS </li>
-                            <li> UROPA </li> 
-                            <li> TITAN </li>
+                            <li class="destination-list"> MOON </li>
+                            <li class="destination-list"> MARS </li>
+                            <li class="destination-list"> UROPA </li> 
+                            <li class="destination-list"> TITAN </li>
                         </ul>
 
                         <div class="flex flex-col desktop:gap-[1rem]">
 
-                            <h2 class="text-[3rem] font-head mobile:text-[5rem] desktop:text-[5.5rem]"> MOON </h2>
+                            <h2 class="text-[3rem] font-head mobile:text-[5rem] desktop:text-[5.5rem] planet-name"> MOON </h2>
 
-                            <p class="max-w-[450px]"> 
+                            <p class="max-w-[450px] planet-description"> 
                                 See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites. 
                             </p>
 
@@ -90,12 +95,12 @@
                         <div class="flex flex-col gap-[1rem] justify-between font-head tablet:flex-row tablet:w-[300px] tablet:text-start desktop:w-[350px]">
                             <div>
                                 <p class="text-gray-400"> AVG. DISTANCE </p>
-                                <h2 class="text-[1.5rem] text-white desktop:text-[2rem]"> 384,400 KM </h2>
+                                <h2 class="text-[1.5rem] text-white desktop:text-[2rem] distance"> 384,400 KM </h2>
                             </div>
 
                             <div>
                                 <p class="text-gray-400"> EST. TRAVEL TIME </p>
-                                <h2 class="text-[1.5rem] text-white desktop:text-[2rem]"> 3 DAYS </h2>
+                                <h2 class="text-[1.5rem] text-white desktop:text-[2rem] travel-time"> 3 DAYS </h2>
                             </div>
 
                         </div>
@@ -107,7 +112,7 @@
     
             </div>
 
-            <div>
+            <div class="container px-[2rem] desktop:px-[5rem] tabs">
 
                 <h1 class="mb-[3rem] text-center tablet:text-start tablet:text-[1.5rem]"> <span class="mr-[1rem] text-gray-400"> 02 </span> MEET YOUR CREW </h1>
 
@@ -116,14 +121,16 @@
                     <div class="grid gap-[2rem] justify-items-center items-center text-center xlDesktop:grid-cols-2 xlDesktop:h-[700px] xlDesktop:justify-items-start">
 
                         <div class="border-b-[1px] h-[100%] w-full tablet:order-2 relative tablet:border-0">
-                            <img src="assets/crew/image-anousheh-ansari.png" alt="" class="w-[200px] mx-auto tablet:w-[500px] xlDesktop:w-[900px] xlDesktop:absolute bottom-0">
+                            <img src="assets/crew/image-anousheh-ansari.png" alt="" 
+                            class="mx-auto h-[300px] 
+                            tablet:h-[500px] xlDesktop:h-[700px] xlDesktop:absolute bottom-0 crew-image">
                         </div>
     
                         <div class="flex flex-col gap-[2rem] items-center tablet:flex-col-reverse desktop:justify-center h-[100%] xlDesktop:items-start xlDesktop:text-start xlDesktop:gap-[8rem]">
     
                             <div class="flex gap-[1rem]">
     
-                                <div class="h-[10px] w-[10px] bg-gray-400 rounded-[50%] crew-nav active">
+                                <div class="h-[10px] w-[10px] bg-gray-400 rounded-[50%] crew-nav">
         
                                 </div>
         
@@ -143,11 +150,11 @@
 
                             <div class="flex flex-col gap-[2rem] max-w-[480px]">
                                 <div class="">
-                                    <p class="text-gray-400 tablet:text-[2rem]"> FLIGHT ENGINEER </p>
-                                    <h2 class="text-[2rem] tablet:text-[3rem] xlDesktop:text-[3.5]"> ANOUSHEH ANSARI </h2>
+                                    <p class="text-gray-400 tablet:text-[2rem] crew-role"> FLIGHT ENGINEER </p>
+                                    <h2 class="text-[2rem] font-head tablet:text-[3rem] xlDesktop:text-[3.5] crew-name"> ANOUSHEH ANSARI </h2>
                                 </div>
             
-                                <p> 
+                                <p class="crew-bio"> 
                                     Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.
                                 </p>
 
@@ -161,6 +168,56 @@
                 </div>
                 
             </div>
+
+            <div class="pb-[5rem] desktop:pl-[5rem] xlDesktop:container tabs">
+
+                <h1 class="container px-[2rem] desktop:px-[0] mb-[3rem] text-center tablet:text-start tablet:text-[1.5rem]"> <span class="mr-[1rem] text-gray-400"> 03 </span> SPACE LAUNCH 101 </h1>
+
+                <div class="grid gap-[2rem] text-center w-[100%] desktop:grid-cols-2">
+                    <div class="desktop:order-2 desktop:flex desktop:justify-end">
+                        <img src="assets/technology/image-launch-vehicle-portrait.jpg" alt="" class="w-full h-full object-contain desktop:max-w-[500px] tech-img">
+                    </div>
+
+                    <div class="container px-[2rem] desktop:px-[0] grid place-items-center desktop:justify-items-start">
+
+                        <div class="flex flex-col items-center gap-[2rem] desktop:flex-row desktop:items-start desktop:text-start desktop:gap-[3rem]">
+
+                            <div class="flex gap-[1rem] desktop:flex-col">
+
+                                <div class="h-[3rem] w-[3rem] xlDesktop:h-[5rem] xlDesktop:w-[5rem] border-[1px] grid place-items-center rounded-[50%] cursor-pointer tech-nav">
+                                    <h2> 1 </h2>
+                                </div>
+        
+                                <div class="h-[3rem] w-[3rem] xlDesktop:h-[5rem] xlDesktop:w-[5rem] border-[1px] grid place-items-center rounded-[50%] cursor-pointer tech-nav">
+                                    <h2> 2 </h2>
+                                </div>
+        
+                                <div class="h-[3rem] w-[3rem] xlDesktop:h-[5rem] xlDesktop:w-[5rem] border-[1px] grid place-items-center rounded-[50%] cursor-pointer tech-nav">
+                                    <h2> 3 </h2>
+                                </div>
+        
+                            </div>
+    
+                            <div class="flex flex-col gap-[2rem]">
+    
+                                <div>
+                                    <p> THE TERMINOLOGY... </p>
+                                    <h2 class="text-[2rem] font-head desktop:text-[2.5rem] lgDesktop:text-[3rem] xlDesktop:text-[3.5rem]"> LAUNCH VEHICLE </h2>
+                                </div>
+        
+                                <p class="max-w-[480px] mx-auto desktop:mx-0">
+                                    A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!    
+                                </p>
+    
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
     
         
     
@@ -168,6 +225,6 @@
 
     </div>
 
-    
+<script src="script.js"></script>    
 </body>
 </html>
