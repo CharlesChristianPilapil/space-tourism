@@ -669,6 +669,10 @@ video {
   height: 1px;
 }
 
+.h-\[300px\]{
+  height: 300px;
+}
+
 .h-\[3rem\]{
   height: 3rem;
 }
@@ -679,14 +683,6 @@ video {
 
 .h-full{
   height: 100%;
-}
-
-.h-\[300px\]{
-  height: 300px;
-}
-
-.h-\[400px\]{
-  height: 400px;
 }
 
 .w-\[100\%\]{
@@ -725,16 +721,16 @@ video {
   max-width: 480px;
 }
 
-.max-w-\[500px\]{
-  max-width: 500px;
-}
-
 .flex-grow-\[1\]{
   flex-grow: 1;
 }
 
 .cursor-pointer{
   cursor: pointer;
+}
+
+.resize{
+  resize: both;
 }
 
 .flex-col{
@@ -771,10 +767,6 @@ video {
 
 .gap-\[5rem\]{
   gap: 5rem;
-}
-
-.overflow-y-auto{
-  overflow-y: auto;
 }
 
 .overflow-y-scroll{
@@ -887,6 +879,11 @@ body {
   background-position: center;
   background-size: cover;
   min-height: 100vh;
+  transition: .2s ease-in-out;
+}
+
+.transitions {
+  transition: .3s ease-in-out;
 }
 
 ul li {
@@ -1010,6 +1007,19 @@ section .tabs {
 
 section .tabs.active {
   display: block;
+  animation: animate .5s ease-in-out;
+}
+
+@keyframes animate {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 
 section .crew-nav {
@@ -1036,17 +1046,22 @@ section .tech-nav:hover {
   color: black;
 }
 
-@media (min-width: 676px) {
-  body {
-    background-image: url('assets/home/background-home-tablet.jpg');
-  }
+section .tech-nav.active {
+  background-color: white;
+  color: black;
+}
+
+/* @media (min-width: 676px) {
+    body {
+        background-image: url('assets/home/background-home-tablet.jpg');
+    }
 }
 
 @media (min-width: 976px) {
-  body {
-    background-image: url('assets/home/background-home-desktop.jpg');
-  }
-}
+    body {
+        background-image: url('assets/home/background-home-desktop.jpg');
+    }
+} */
 
 @media (min-width: 1380px){
   .xlDesktop\:container{
@@ -1139,10 +1154,6 @@ section .tech-nav:hover {
     display: none;
   }
 
-  .tablet\:h-\[\]{
-    height: ;
-  }
-
   .tablet\:h-\[500px\]{
     height: 500px;
   }
@@ -1153,10 +1164,6 @@ section .tech-nav:hover {
 
   .tablet\:w-\[300px\]{
     width: 300px;
-  }
-
-  .tablet\:w-\[500px\]{
-    width: 500px;
   }
 
   .tablet\:flex-row{
@@ -1173,6 +1180,10 @@ section .tech-nav:hover {
 
   .tablet\:border-0{
     border-width: 0px;
+  }
+
+  .tablet\:pb-\[0\]{
+    padding-bottom: 0;
   }
 
   .tablet\:text-start{
@@ -1389,20 +1400,12 @@ section .tech-nav:hover {
     height: 700px;
   }
 
-  .xlDesktop\:h-\[900px\]{
-    height: 900px;
-  }
-
   .xlDesktop\:w-\[500px\]{
     width: 500px;
   }
 
   .xlDesktop\:w-\[5rem\]{
     width: 5rem;
-  }
-
-  .xlDesktop\:w-\[900px\]{
-    width: 900px;
   }
 
   .xlDesktop\:grid-cols-2{

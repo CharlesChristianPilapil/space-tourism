@@ -2,7 +2,17 @@
 
 const navList = document.querySelectorAll('.nav-list');
 const tabs = document.querySelectorAll('.tabs');
+const explore = document.querySelector('.explore');
 
+
+let tabName = '';
+let styles = '';
+
+const background = document.querySelector('.background');
+
+const changeBackgound = () => {
+    background.style.backgroundImage = `url(assets/${tabName}/background-${tabName}-${styles}.jpg)`;
+}
 
 // lists
 const activeTab = (index) => {
@@ -11,6 +21,16 @@ const activeTab = (index) => {
 
     tabs.forEach(tabs => tabs.classList.remove('active'));        
     tabs[index].classList.add('active');
+
+    if(index == 0) tabName = 'home';
+
+    if(index == 1) tabName = 'destination';
+
+    if(index == 2) tabName = 'crew';
+
+    if(index == 3) tabName = 'technology'
+
+    changeBackgound();
 };
 
 const destination = (index) => {
@@ -23,13 +43,18 @@ const crews = (index) => {
     crewNav[index].classList.add('active');
 };
 
+const technology = (index) => {
+    techList.forEach(entry => entry.classList.remove('active'));
+    techList[index].classList.add('active');
+}
+
 navList.forEach((list, index) => {
     list.addEventListener('click', () => {
        activeTab(index);
     });
 });
 
-activeTab(2)
+activeTab(0);
 
 const getData = async () => {
     const res = await fetch(constants);
@@ -49,6 +74,8 @@ const travelTime = document.querySelector('.travel-time');
 const planets = async (index) => {
     const planets = await getData();
     planet.src = planets.destinations[index].images.png;
+    planet.alt = `${planets.destinations[index].name}`;
+
     planetName.innerHTML = `${planets.destinations[index].name}`;
     planetDescription.innerHTML = `${planets.destinations[index].description}`
     distance.innerHTML = `${planets.destinations[index].distance}`
@@ -79,6 +106,7 @@ const crewData = async (index) => {
     const data = crewData.crew;
     
     crewImage.src = data[index].images.png;
+    crewImage.alt = `${data[index].name}`
     crewName.innerHTML = `${data[index].name}`;
     crewRole.innerHTML  = `${data[index].role}`;
     crewBio.innerHTML  = `${data[index].bio}`;
@@ -92,5 +120,79 @@ crewNav.forEach((list, index) => {
     })
 })
 
-crews(0)
-crewData(0)
+crews(0);
+crewData(0);
+
+
+
+const techList = document.querySelectorAll('.tech-nav');
+const techImg = document.querySelector('.tech-img');
+const techName = document.querySelector('.tech-name');
+const techDescription = document.querySelector('.tech-description');
+
+const technologyData = async (index) => {
+    const tech = await getData();
+    const data = tech.technology;
+
+    techName.innerHTML = `${data[index].name}`;
+    techDescription.innerHTML = `${data[index].description}`;
+
+    const updateImage = () => {
+        const viewportWidth = window.innerWidth;
+        let size = `${viewportWidth < 976 ? 'landscape' : 'portrait'}`;
+
+        const image = data[index].images;
+        techImg.src = image[size];
+        techImg.alt = `${data[index].name}`
+    };
+
+    // Initial application of styles
+    updateImage();
+
+    // Update image on window resize
+    window.addEventListener('resize', updateImage);
+}
+
+technologyData(0);
+
+
+techList.forEach((list, index) => {
+    list.addEventListener('click', () => {
+        technology(index);
+        technologyData(index)
+    })
+})
+
+technology(0);
+
+function applyStyles() {
+    const viewportWidth = window.innerWidth;
+
+    // Media query 1: Small screens
+    if (viewportWidth < 676) {
+        styles = 'mobile';
+    }
+
+    // Media query 2: Medium screens
+    if (viewportWidth >= 676 && viewportWidth < 976) {
+        styles = 'tablet';
+    }
+
+    // Media query 3: Large screens
+    if (viewportWidth >= 976) {
+        styles = 'desktop';
+    }
+
+    changeBackgound();
+    
+}
+
+explore.addEventListener('click', () => {
+    activeTab(1);
+})
+
+// Initial application of styles
+applyStyles();
+
+// Update styles on window resize
+window.addEventListener('resize', applyStyles);
