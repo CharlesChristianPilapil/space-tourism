@@ -80,7 +80,17 @@ nav ul::after {
 }
 
 section .tabs {
-    /* display: none; */
+    display: none;
+}
+
+section .crew-nav {
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+section .crew-nav.active {
+    width: 30px;
+    border-radius: 0;
 }
 
 

@@ -616,6 +616,19 @@ video {
   position: relative;
 }
 
+.bottom-0{
+  bottom: 0px;
+}
+
+.clear-start{
+  clear: inline-start;
+}
+
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mb-\[2rem\]{
   margin-bottom: 2rem;
 }
@@ -628,8 +641,16 @@ video {
   margin-right: 1rem;
 }
 
+.mr-\[2rem\]{
+  margin-right: 2rem;
+}
+
 .flex{
   display: flex;
+}
+
+.table{
+  display: table;
 }
 
 .grid{
@@ -638,6 +659,10 @@ video {
 
 .hidden{
   display: none;
+}
+
+.h-\[10px\]{
+  height: 10px;
 }
 
 .h-\[10rem\]{
@@ -654,6 +679,22 @@ video {
 
 .h-full{
   height: 100%;
+}
+
+.h-\[100\]{
+  height: 100;
+}
+
+.h-\[100\%\]{
+  height: 100%;
+}
+
+.max-h-full{
+  max-height: 100%;
+}
+
+.w-\[10px\]{
+  width: 10px;
 }
 
 .w-\[10rem\]{
@@ -674,6 +715,18 @@ video {
 
 .max-w-\[450px\]{
   max-width: 450px;
+}
+
+.max-w-\[\]{
+  max-width: ;
+}
+
+.max-w-\[4\]{
+  max-width: 4;
+}
+
+.max-w-\[480px\]{
+  max-width: 480px;
 }
 
 .flex-grow-\[1\]{
@@ -704,6 +757,10 @@ video {
   justify-content: space-between;
 }
 
+.justify-items-center{
+  justify-items: center;
+}
+
 .gap-\[1rem\]{
   gap: 1rem;
 }
@@ -716,6 +773,10 @@ video {
   gap: 5rem;
 }
 
+.gap-\[\]{
+  gap: ;
+}
+
 .overflow-y-auto{
   overflow-y: auto;
 }
@@ -724,9 +785,37 @@ video {
   border-radius: 50%;
 }
 
+.border{
+  border-width: 1px;
+}
+
+.border-b-\[1px\]{
+  border-bottom-width: 1px;
+}
+
+.bg-gray-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-red-800{
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
+}
+
+.bg-gray-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
 .p-\[2rem\]{
@@ -749,10 +838,6 @@ video {
 
 .pl-\[2rem\]{
   padding-left: 2rem;
-}
-
-.pr-\[2rem\]{
-  padding-right: 2rem;
 }
 
 .text-center{
@@ -883,7 +968,17 @@ nav ul::after {
 }
 
 section .tabs {
-  /* display: none; */
+  display: none;
+}
+
+section .crew-nav {
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+
+section .crew-nav.active {
+  width: 30px;
+  border-radius: 0;
 }
 
 @media (min-width: 676px) {
@@ -909,6 +1004,10 @@ section .tabs {
 }
 
 @media (min-width: 676px){
+  .tablet\:order-2{
+    order: 2;
+  }
+
   .tablet\:flex{
     display: flex;
   }
@@ -917,16 +1016,52 @@ section .tabs {
     display: none;
   }
 
+  .tablet\:min-h-\[\]{
+    min-height: ;
+  }
+
+  .tablet\:min-h-\[800px\]{
+    min-height: 800px;
+  }
+
+  .tablet\:min-h-\[700px\]{
+    min-height: 700px;
+  }
+
   .tablet\:w-\[300px\]{
     width: 300px;
+  }
+
+  .tablet\:w-\[\]{
+    width: ;
+  }
+
+  .tablet\:w-\[600px\]{
+    width: 600px;
+  }
+
+  .tablet\:w-\[500px\]{
+    width: 500px;
   }
 
   .tablet\:flex-row{
     flex-direction: row;
   }
 
+  .tablet\:flex-col-reverse{
+    flex-direction: column-reverse;
+  }
+
   .tablet\:justify-end{
     justify-content: flex-end;
+  }
+
+  .tablet\:border{
+    border-width: 1px;
+  }
+
+  .tablet\:border-0{
+    border-width: 0px;
   }
 
   .tablet\:text-start{
@@ -935,6 +1070,14 @@ section .tabs {
 
   .tablet\:text-\[1\.5rem\]{
     font-size: 1.5rem;
+  }
+
+  .tablet\:text-\[2rem\]{
+    font-size: 2rem;
+  }
+
+  .tablet\:text-\[3rem\]{
+    font-size: 3rem;
   }
 }
 
@@ -982,6 +1125,22 @@ section .tabs {
 
   .desktop\:w-full{
     width: 100%;
+  }
+
+  .desktop\:w-\[\]{
+    width: ;
+  }
+
+  .desktop\:w-\[700px\]{
+    width: 700px;
+  }
+
+  .desktop\:w-\[800px\]{
+    width: 800px;
+  }
+
+  .desktop\:w-\[900px\]{
+    width: 900px;
   }
 
   .desktop\:flex-grow-\[1\]{
@@ -1032,6 +1191,10 @@ section .tabs {
     gap: 3rem;
   }
 
+  .desktop\:gap-\[2rem\]{
+    gap: 2rem;
+  }
+
   .desktop\:px-\[5rem\]{
     padding-left: 5rem;
     padding-right: 5rem;
@@ -1071,6 +1234,10 @@ section .tabs {
     width: 15rem;
   }
 
+  .lgDesktop\:items-start{
+    align-items: flex-start;
+  }
+
   .lgDesktop\:gap-\[10\%\]{
     gap: 10%;
   }
@@ -1081,11 +1248,71 @@ section .tabs {
 }
 
 @media (min-width: 1380px){
+  .xlDesktop\:absolute{
+    position: absolute;
+  }
+
+  .xlDesktop\:h-full{
+    height: 100%;
+  }
+
+  .xlDesktop\:h-\[100\%\]{
+    height: 100%;
+  }
+
+  .xlDesktop\:h-\[\]{
+    height: ;
+  }
+
+  .xlDesktop\:h-\[700px\]{
+    height: 700px;
+  }
+
   .xlDesktop\:w-\[500px\]{
     width: 500px;
   }
 
+  .xlDesktop\:w-\[900px\]{
+    width: 900px;
+  }
+
+  .xlDesktop\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .xlDesktop\:items-start{
+    align-items: flex-start;
+  }
+
+  .xlDesktop\:justify-items-start{
+    justify-items: start;
+  }
+
   .xlDesktop\:gap-\[8rem\]{
     gap: 8rem;
+  }
+
+  .xlDesktop\:gap-\[3rem\]{
+    gap: 3rem;
+  }
+
+  .xlDesktop\:gap-\[5rem\]{
+    gap: 5rem;
+  }
+
+  .xlDesktop\:gap-\[10rem\]{
+    gap: 10rem;
+  }
+
+  .xlDesktop\:text-start{
+    text-align: start;
+  }
+
+  .xlDesktop\:text-\[4rem\]{
+    font-size: 4rem;
+  }
+
+  .xlDesktop\:text-\[3\.5\]{
+    color: 3.5;
   }
 }
