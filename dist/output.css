@@ -885,6 +885,10 @@ video {
   padding-left: 2rem;
 }
 
+.pb-\[3rem\]{
+  padding-bottom: 3rem;
+}
+
 .text-center{
   text-align: center;
 }
