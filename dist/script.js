@@ -7,12 +7,48 @@ const navOverlay = document.querySelector('.nav-overlay');
 const mobileList = document.querySelectorAll('.mobile-nav-list');
 
 
+const backgroundImages = {
+    home: {
+      mobile: 'assets/home/background-home-mobile.jpg',
+      tablet: 'assets/home/background-home-tablet.jpg',
+      desktop: 'assets/home/background-home-desktop.jpg',
+    },
+    destination: {
+      mobile: 'assets/destination/background-destination-mobile.jpg',
+      tablet: 'assets/destination/background-destination-tablet.jpg',
+      desktop: 'assets/destination/background-destination-desktop.jpg',
+    },
+    crew: {
+        mobile: 'assets/crew/background-crew-mobile.jpg',
+        tablet: 'assets/crew/background-crew-tablet.jpg',
+        desktop: 'assets/crew/background-crew-desktop.jpg',
+    },
+    technology: {
+        mobile: 'assets/technology/background-technology-mobile.jpg',
+        tablet: 'assets/technology/background-technology-tablet.jpg',
+        desktop: 'assets/technology/background-technology-desktop.jpg',
+    },
+};
+
+// Preload images
+const preloadImages = () => {
+    Object.values(backgroundImages).forEach((sizes) => {
+      Object.values(sizes).forEach((imageUrl) => {
+        const img = new Image();
+        img.src = imageUrl;
+      });
+    });
+  };
+  
+preloadImages();
+
+
 mobileList.forEach((list, index) => {
     list.addEventListener('click', () => {
         activeTab(index);
         closeMobileNav();
     })
-})
+});
 
 
 const updateBurgerIcon = () => {
@@ -49,8 +85,8 @@ let styles = '';
 const background = document.querySelector('.background');
 
 const changeBackgound = () => {
-    background.style.backgroundImage = `url(assets/${tabName}/background-${tabName}-${styles}.jpg)`;
-}
+    background.style.backgroundImage = `url(${backgroundImages[tabName][styles]})`;
+};
 
 // lists
 const activeTab = (index) => {
@@ -225,7 +261,6 @@ function applyStyles() {
     }
 
     changeBackgound();
-    
 }
 
 explore.addEventListener('click', () => {
