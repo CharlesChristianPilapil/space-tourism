@@ -84,7 +84,7 @@ let styles = '';
 
 const background = document.querySelector('.background');
 
-const changeBackgound = () => {
+const changeBackground = () => {
     background.style.backgroundImage = `url(${backgroundImages[tabName][styles]})`;
 };
 
@@ -107,7 +107,7 @@ const activeTab = (index) => {
 
     if(index == 3) tabName = 'technology'
 
-    changeBackgound();
+    changeBackground();
 };
 
 const destination = (index) => {
@@ -260,7 +260,7 @@ function applyStyles() {
         styles = 'desktop';
     }
 
-    changeBackgound();
+    changeBackground();
 }
 
 explore.addEventListener('click', () => {
